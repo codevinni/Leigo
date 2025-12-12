@@ -12,8 +12,8 @@ function App() {
       <Routes>
 
         <Route path='/' element={<LandingPage/>}></Route>
-        <Route path='/app' element={<Feed/>}></Route>
-        <Route path='/result' element={<Results/>}></Route>
+        <Route path='/feed' element={<Feed/>}></Route>
+        <Route path='/result/:id' element={<Results/>}></Route>
         <Route path='*' element={<NotFound/>}></Route>
 
       </Routes>

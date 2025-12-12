@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react";
-import Card from "../components/Card";
+import FeedCard from "../components/FeedCard";
+import { searchRecentProjects } from "../services/camaraApi";
 
 function Feed(){
 
     const [leis, setLeis] = useState([]);
     const [loading, setLoading] = useState(true);
-    const arrayL = ["Lei 1", "Lei 2", "Lei 3"];
 
     useEffect(()=>{
-        setLeis(arrayL);
-        setLoading(false);
+
+        const loadProjects = async() => {
+            const projects = await searchRecentProjects()
+            setLeis(projects);
+            setLoading(false);
+        }
+
+        loadProjects()
+
     }, [])
     
     if(loading){
@@ -21,7 +28,7 @@ function Feed(){
     return (
         <>
             {
-                leis.map((lei) => <Card key={lei} data={lei}/>)
+                leis.map((lei) => <FeedCard key={lei.id} info={lei}/>)
             }
         </>
     );
