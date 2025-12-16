@@ -1,0 +1,283 @@
+/* ========================================
+   RESULTS PAGE - Análise da Proposição
+   ======================================== */
+
+.results-page {
+    min-height: 100vh;
+    padding-bottom: var(--spacing-xl);
+    background-color: var(--background);
+}
+
+.results-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+/* Cabeçalho da proposição */
+.results-header {
+    background: var(--card-background);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.results-breadcrumb {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.results-proposal-id {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.results-proposal-date {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.results-proposal-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.results-proposal-summary {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Slider de impacto */
+.results-impact {
+    background: var(--card-background);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.results-impact-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.results-impact-slider {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 4px;
+    margin-bottom: var(--spacing-sm);
+    transition: background-color 0.3s ease;
+}
+
+.results-impact-slider.positivo {
+    background: var(--positivo);
+}
+
+.results-impact-slider.negativo {
+    background: var(--negativo);
+}
+
+.results-impact-slider.neutro {
+    background: var(--neutro);
+}
+
+.results-impact-text {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: var(--spacing-md);
+}
+
+.results-impact-text.positivo {
+    color: var(--positivo);
+}
+
+.results-impact-text.negativo {
+    color: var(--negativo);
+}
+
+.results-impact-text.neutro {
+    color: var(--neutro);
+}
+
+/* Seções de conteúdo */
+.results-section {
+    background: var(--card-background);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.results-section-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.results-section-content {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Controles de áudio */
+.results-audio-controls {
+    background: var(--card-background);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    justify-content: center;
+}
+
+.results-audio-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.5rem;
+}
+
+.results-audio-btn:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.results-audio-btn:active {
+    transform: scale(0.98);
+}
+
+.results-audio-btn.secondary {
+    background-color: var(--text-secondary);
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+}
+
+/* Botão de voltar */
+.results-back-btn {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.results-back-btn:hover {
+    background-color: var(--background);
+    border-color: var(--text-secondary);
+}
+
+/* Loading e Error states */
+.results-loading,
+.results-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.results-loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: var(--spacing-md);
+}
+
+.results-error-icon {
+    font-size: 4rem;
+    color: var(--negativo);
+    margin-bottom: var(--spacing-md);
+}
+
+.results-error-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.results-error-message {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ========================================
+   TABLET E DESKTOP (min-width: 768px)
+   ======================================== */
+
+@media (min-width: 768px) {
+    .results-container {
+        padding: var(--spacing-lg);
+    }
+
+    .results-header {
+        padding: var(--spacing-xl);
+    }
+
+    .results-proposal-id {
+        font-size: 1.5rem;
+    }
+
+    .results-proposal-title {
+        font-size: 1.25rem;
+    }
+
+    .results-section {
+        padding: var(--spacing-xl);
+    }
+
+    .results-section-title {
+        font-size: 1.25rem;
+    }
+
+    .results-back-btn {
+        width: auto;
+        min-width: 200px;
+    }
+}

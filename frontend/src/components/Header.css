@@ -1,0 +1,116 @@
+/* ========================================
+   HEADER - Mobile First
+   ======================================== */
+
+.header {
+    background-color: var(--card-background);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-md);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.header-logo-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Área do usuário */
+.header-user-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.header-job-info {
+    display: none;
+    /* Esconde no mobile */
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.header-job-label {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Botão de editar/definir perfil */
+.header-btn-edit {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.header-btn-edit:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.header-btn-edit:active {
+    transform: translateY(0);
+}
+
+/* Ícone do botão (opcional) */
+.header-btn-icon {
+    font-size: 1rem;
+}
+
+/* ========================================
+   TABLET E DESKTOP (min-width: 768px)
+   ======================================== */
+
+@media (min-width: 768px) {
+    .header {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .header-logo {
+        font-size: 1.5rem;
+    }
+
+    .header-logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header-job-info {
+        display: block;
+        /* Mostra no desktop */
+        margin-right: var(--spacing-sm);
+    }
+
+    .header-btn-edit {
+        padding: var(--spacing-sm) var(--spacing-lg);
+    }
+}

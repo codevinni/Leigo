@@ -1,10 +1,10 @@
 const ENDPOINT = "https://dadosabertos.camara.leg.br/api/v2"
 
-function formatDate(data){
+function formatDate(data) {
     return data.toISOString().split('T')[0];
 }
 
-export async function searchRecentProjects(){
+export async function searchRecentProjects() {
 
     const today = new Date();
     const oldDate = new Date();
@@ -32,7 +32,7 @@ export async function searchRecentProjects(){
     }
 };
 
-export async function getProjectInfo(id){
+export async function getProjectInfo(id) {
 
     const url = `${ENDPOINT}/proposicoes/${id}`;
 
@@ -44,5 +44,32 @@ export async function getProjectInfo(id){
         console.error("Erro API Câmara:", error);
         return null;
     }
+}
 
+export async function getAnalisisResult(id, job) {
+
+    const API = "http://127.0.0.1:8000/analyze"
+
+    try {
+        const response = await fetch(API, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                proposal_id: parseInt(id),
+                job: job
+            })
+        });
+
+        if (!response.ok)
+            throw new Error("Erro na comunicação com o backend");
+
+        const result = await response.json();
+        return result;
+
+    } catch (err) {
+        console.error("Erro inesperado:", err);
+        throw err;
+    }
 }

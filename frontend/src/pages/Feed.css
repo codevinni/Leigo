@@ -1,0 +1,127 @@
+/* ========================================
+   FEED PAGE - Mobile First
+   ======================================== */
+
+.feed-page {
+    min-height: 100vh;
+    padding-bottom: var(--spacing-xl);
+}
+
+.feed-header {
+    padding: var(--spacing-lg) var(--spacing-md);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    margin-bottom: var(--spacing-lg);
+}
+
+.feed-header-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.feed-header-subtitle {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.feed-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.feed-grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+/* Estado de carregamento */
+.feed-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    gap: var(--spacing-md);
+}
+
+.feed-loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.feed-loading-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Estado vazio */
+.feed-empty {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--text-secondary);
+}
+
+.feed-empty-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.3;
+}
+
+.feed-empty-text {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.feed-empty-subtitle {
+    font-size: 0.875rem;
+}
+
+/* ========================================
+   TABLET (min-width: 768px)
+   ======================================== */
+
+@media (min-width: 768px) {
+    .feed-header {
+        padding: var(--spacing-xl) var(--spacing-md);
+        margin-bottom: var(--spacing-xl);
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+
+    .feed-header-title {
+        font-size: 2rem;
+    }
+
+    .feed-header-subtitle {
+        font-size: 1rem;
+    }
+
+    .feed-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
+
+/* ========================================
+   DESKTOP (min-width: 1024px)
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .feed-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
