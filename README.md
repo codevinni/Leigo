@@ -3,6 +3,11 @@
 <img src="frontend/public/leigo.png" alt="Descrição da Imagem" width="300"/>
 </p>
 
+[![Live Preview](https://img.shields.io/badge/Live-Preview-brightgreen?style=for-the-badge&logo=vercel)](https://leigo-ai.vercel.app)
+[![Frontend](https://img.shields.io/badge/React-19.2-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
+[![Backend](https://img.shields.io/badge/FastAPI-Python-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+
+
 ## 📋 Sobre o Projeto
 
 Leigo.AI é uma aplicação web que utiliza inteligência artificial para analisar projetos de lei da Câmara dos Deputados brasileira e explicar seu impacto de forma personalizada, considerando a profissão do usuário.
