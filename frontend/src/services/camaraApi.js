@@ -48,7 +48,7 @@ export async function getProjectInfo(id) {
 
 export async function getAnalisisResult(id, job) {
 
-    const API = "http://127.0.0.1:8000/analyze"
+    const API = "https://leigo-fastapi-rest.vercel.app/analyze"
 
     try {
         const response = await fetch(API, {
